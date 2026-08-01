@@ -1249,6 +1249,50 @@
         font-size: clamp(0.714rem, 1.36vw, 0.978rem);
       }
     }
+
+    @media (min-width: 769px) and (max-width: 1440px) {
+      html {
+        scroll-padding-top: 132px;
+      }
+
+      .nav-inner {
+        min-height: 0;
+        gap: 6px;
+        padding: 8px 0 6px;
+      }
+
+      .brand-logo {
+        width: 84px;
+        height: 84px;
+      }
+
+      .brand-title-text {
+        width: clamp(190px, 23vw, 300px);
+      }
+
+      .brand-title-aurora {
+        font-size: clamp(1.35rem, 2.65vw, 2.1rem);
+      }
+
+      .brand-title-dpc {
+        font-size: clamp(1.2rem, 2.25vw, 1.78rem);
+      }
+
+      .brand-title-sub {
+        margin-top: 4px;
+        font-size: clamp(0.62rem, 0.95vw, 0.82rem);
+        letter-spacing: clamp(2.2px, 0.34vw, 3px);
+      }
+
+      .nav-links {
+        gap: 1px;
+      }
+
+      .nav-links a {
+        padding: 5px 8px;
+        font-size: 0.78rem;
+      }
+    }
   </style>
 </head>
 <body>
