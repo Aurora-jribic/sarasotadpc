@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aurora Direct Primary Care - Personalized primary care with transparent monthly membership for individuals, families, and employers.">
+  <title>Aurora Direct Primary Care</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <style>
+    :root {
+      --primary: #0057E1;
+      --primary-dark: #003A96;
+      --primary-light: #E5F0FE;
+      --accent: #ED1C24;
+      --text: #333333;
+      --text-light: #595959;
+      --bg-light: #f7f9fc;
+      --bg-warm: #F5F8FE;
+      --white: #ffffff;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+      --radius: 14px;
+      --radius-lg: 20px;
+      --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      --brand-title-width: clamp(240px, 30vw, 400px);
+      --brand-lockup-width: calc(112px + 4px + var(--brand-title-width));
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1140px, 100% - 48px);
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.4vw, 2.7rem);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      max-width: 760px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: none;
+      padding: 13px 28px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-outline {
+      border: 1.6px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      color: var(--white);
+      background: var(--primary);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      min-height: 84px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 14px 0 12px;
+    }
+
+    .nav-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      width: min(calc(100% - 64px), var(--brand-lockup-width));
+      min-width: 0;
+      text-align: left;
+      line-height: 1;
+    }
+
+    .brand-logo {
+      width: 112px;
+      height: 112px;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+      align-self: center;
+    }
+
+    .brand-title-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      line-height: 0.95;
+      user-select: none;
+      width: var(--brand-title-width);
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .brand-title-aurora {
+      width: 100%;
+      text-align: center;
+      font-size: clamp(2.35rem, 5vw, 3.8rem);
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: #b40202;
+    }
+
+    .brand-title-row {
+      margin-top: 4px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .brand-title-row::before,
+    .brand-title-row::after {
+      content: "";
+      height: 8px;
+      width: clamp(58px, 9vw, 108px);
+      border-radius: 999px;
+      background: #1543b7;
+      flex: 0 0 auto;
+    }
+
+    .brand-title-dpc {
+      font-size: clamp(2.1rem, 4.3vw, 3.2rem);
+      font-weight: 900;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      color: #062ea9;
+      line-height: 0.95;
+    }
+
+    .brand-title-sub {
+      margin-top: 8px;
+      font-size: clamp(0.84rem, 1.6vw, 1.15rem);
+      font-weight: 800;
+      letter-spacing: clamp(3.2px, 0.62vw, 6.4px);
+      text-transform: uppercase;
+      color: #b40202;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: min(calc(100% - 64px), var(--brand-lockup-width));
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid #d7e2f7;
+      border-radius: 10px;
+      background: #ffffff;
+      color: var(--primary);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav-links a {
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: var(--text-light);
+      font-size: 0.86rem;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .hero {
+      position: relative;
+      padding: 88px 0 92px;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.94) 0%,
+          rgba(255, 255, 255, 0.76) 20%,
+          rgba(255, 255, 255, 0.34) 46%,
+          rgba(255, 255, 255, 0) 68%
+        ),
+        linear-gradient(
+          to top,
+          rgba(255, 255, 255, 0.96) 0%,
+          rgba(255, 255, 255, 0.72) 20%,
+          rgba(255, 255, 255, 0) 42%
+        ),
+        url('images/Background01.png') center/cover no-repeat;
+      border-bottom: 1px solid #edf2fb;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .hero-intro {
+      text-align: center;
+      max-width: 760px;
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid #cfe0ff;
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.14;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .hero p {
+      color: var(--text-light);
+      font-size: 0.97rem;
+      max-width: 62ch;
+      margin-inline: auto;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+      justify-content: center;
+    }
+
+    .hero-features {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(260px, 1fr));
+      gap: 12px;
+      justify-self: center;
+      width: min(900px, 100%);
+      text-align: left;
+    }
+
+    .hero-feature {
+      padding: 10px 0;
+      border-bottom: none;
+    }
+
+    .hero-feature h3 {
+      font-size: 1rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .hero-feature p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      max-width: 100%;
+    }
+
+    .hero-divider {
+      border: 0;
+      border-top: 1px solid #d8e5fb;
+      margin: 4px 0;
+      grid-column: 1 / -1;
+    }
+
+    .hero-who h2 {
+      font-size: clamp(1.5rem, 2.8vw, 2rem);
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .hero-who-list {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      color: var(--text);
+      font-size: 0.95rem;
+      font-weight: 600;
+      justify-items: center;
+    }
+
+    .hero-who {
+      grid-column: 1 / -1;
+      text-align: center;
+      max-width: 900px;
+      margin-inline: auto;
+    }
+
+    .hero-who-list li {
+      width: fit-content;
+      text-align: left;
+    }
+
+    .hero-who-list li.center-item {
+      text-align: center;
+    }
+
+    .hero-who-list li::before {
+      content: "✔ ";
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid #edf1f8;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 28px;
+    }
+
+    .panel h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.14rem;
+    }
+
+    .about {
+      background: var(--bg-warm);
+    }
+
+    .about .split > .panel:first-child {
+      background:
+        linear-gradient(rgba(245, 248, 254, 0.84), rgba(245, 248, 254, 0.84)),
+        url('images/Nbackground1.jpg') left center/cover no-repeat;
+      border-color: #dce8fb;
+    }
+
+    .about .split > .panel:last-child {
+      background:
+        linear-gradient(rgba(245, 248, 254, 0.84), rgba(245, 248, 254, 0.84)),
+        url('images/Nbackground1.jpg') right center/cover no-repeat;
+      border-color: #dce8fb;
+    }
+
+    .about-values {
+      margin-top: 10px;
+      padding-left: 20px;
+      display: grid;
+      gap: 14px;
+      color: var(--text-light);
+      font-size: 0.92rem;
+    }
+
+    .about-values li::marker {
+      color: var(--primary);
+    }
+
+    .about-values strong {
+      color: var(--text);
+    }
+
+    .provider-panel {
+      margin-top: 24px;
+      background: var(--white);
+      border: 1px solid #dce8fb;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 28px;
+    }
+
+    .provider-layout {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .provider-photo {
+      width: 100%;
+      max-width: 250px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid #dce8fb;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .provider-role {
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+      font-size: 1rem;
+    }
+
+    .provider-panel p + p {
+      margin-top: 12px;
+    }
+
+    .membership {
+      background: var(--white);
+    }
+
+    .membership-cards {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .membership-content {
+      margin-top: 28px;
+      max-width: 920px;
+    }
+
+    .membership-card {
+      background: var(--white);
+      border: 1px solid #e4ebf8;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 22px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .membership-card.main {
+      grid-column: 1 / -1;
+      background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      border: 1px solid #d6e6ff;
+    }
+
+    .membership-card.bg-1,
+    .membership-card.bg-2,
+    .membership-card.bg-3,
+    .membership-card.bg-4 {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-color: #dce8fb;
+    }
+
+    .membership-card.bg-1 {
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.61), rgba(255, 255, 255, 0.61)),
+        url('images/Mbackground1.png');
+    }
+
+    .membership-card.bg-2 {
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.61), rgba(255, 255, 255, 0.61)),
+        url('images/Mbackground2.png');
+    }
+
+    .membership-card.bg-3 {
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.61), rgba(255, 255, 255, 0.61)),
+        url('images/Mbackground3.png');
+    }
+
+    .membership-card.bg-4 {
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.61), rgba(255, 255, 255, 0.61)),
+        url('images/Mbackground4.png');
+    }
+
+    .membership-card h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .membership-card h4 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .membership-price {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .membership-note {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .membership-list {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      color: var(--text-light);
+      font-size: 0.92rem;
+    }
+
+    .membership-list li::before {
+      content: "- ";
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .membership-grid {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .feature {
+      background: var(--bg-light);
+      border: 1px solid #e8eefb;
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+
+    .feature h4 {
+      margin-bottom: 8px;
+      color: var(--primary);
+      font-size: 0.97rem;
+    }
+
+    .feature p {
+      font-size: 0.86rem;
+      color: var(--text-light);
+    }
+
+    .pricing {
+      background: var(--bg-light);
+    }
+
+    .pricing-grid {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .price-card {
+      background: var(--white);
+      border: 1px solid #e4ebf8;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .price-card.highlight {
+      border: 2px solid var(--primary);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .price-card h3 {
+      font-size: 1.1rem;
+    }
+
+    .price {
+      color: var(--primary);
+      font-size: 1.9rem;
+      line-height: 1;
+      font-weight: 800;
+    }
+
+    .price small {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    .price-card ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      color: var(--text-light);
+      font-size: 0.86rem;
+      margin-top: 4px;
+    }
+
+    .price-card li::before {
+      content: "- ";
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .employer {
+      background: var(--white);
+    }
+
+    .employer-layout {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      margin-top: 18px;
+    }
+
+    .employer-card-1,
+    .employer-card-6 {
+      grid-column: 1 / -1;
+    }
+
+    .employer-block {
+      background: #fbfdff;
+      border: 1px solid #e6eefc;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .employer-bg-why {
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.61), rgba(255, 255, 255, 0.61)),
+        url('images/Ebackground4.png') center/cover no-repeat;
+      border-color: #dce8fb;
+    }
+
+    .employer-bg-industries {
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.61), rgba(255, 255, 255, 0.61)),
+        url('images/Ebackground0.png') center/cover no-repeat;
+      border-color: #dce8fb;
+    }
+
+    .employer-bg-one {
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.61), rgba(255, 255, 255, 0.61)),
+        url('images/Ebackground1.png') center/cover no-repeat;
+      border-color: #dce8fb;
+    }
+
+    .employer-bg-five {
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.61), rgba(255, 255, 255, 0.61)),
+        url('images/Ebackground5.png') center/cover no-repeat;
+      border-color: #dce8fb;
+    }
+
+    .employer-block h3 {
+      font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+      line-height: 1.3;
+      margin-bottom: 10px;
+      color: var(--primary-dark);
+    }
+
+    .employer-block p {
+      color: var(--text-light);
+      font-size: 0.93rem;
+    }
+
+    .employer-cta-inline {
+      margin-top: 16px;
+    }
+
+    .employer-cta-inline .btn {
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .employer-checklist,
+    .industry-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+      color: var(--text-light);
+      font-size: 0.92rem;
+    }
+
+    .employer-checklist li::before {
+      content: "✔ ";
+      color: #0f9d58;
+      font-weight: 700;
+    }
+
+    .industry-list li::before {
+      content: "- ";
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .how-steps {
+      margin-top: 12px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .how-step {
+      color: var(--text-light);
+      font-size: 0.92rem;
+    }
+
+    .how-step strong {
+      color: var(--text);
+    }
+
+    .how-arrow {
+      color: var(--primary);
+      font-size: 1.15rem;
+      line-height: 1;
+      padding-left: 2px;
+    }
+
+    .employer-final-cta {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .employer-card-6 {
+      text-align: center;
+    }
+
+    .employer-card-6 .employer-final-cta {
+      justify-content: center;
+    }
+
+    .employer-card-1 {
+      text-align: center;
+    }
+
+    .employer-card-1 .employer-cta-inline {
+      display: flex;
+      justify-content: center;
+    }
+
+    .contact {
+      background: var(--bg-warm);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 48px;
+    }
+
+    .contact-info-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .contact-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateX(4px);
+    }
+
+    .contact-card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--primary-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-card h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 2px;
+    }
+
+    .contact-card p {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .contact-hours {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-hours h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.81rem;
+    }
+
+    .hours-row:last-child {
+      border-bottom: none;
+    }
+
+    .hours-day {
+      font-weight: 600;
+    }
+
+    .hours-time {
+      color: var(--text-light);
+    }
+
+    .contact-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .social-link {
+      width: 44px;
+      height: 44px;
+      background: var(--primary-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .contact-map {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      height: 100%;
+      min-height: 400px;
+    }
+
+    .contact-map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .faq {
+      background: var(--bg-warm);
+    }
+
+    .faq-list {
+      margin-top: 28px;
+      border-top: 1px solid #dfe9fb;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #dfe9fb;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: transparent;
+      border: none;
+      text-align: left;
+      padding: 18px 0;
+      font-size: 0.93rem;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .faq-question span:last-child {
+      color: var(--primary);
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--transition);
+      color: var(--text-light);
+      font-size: 0.88rem;
+      padding-right: 24px;
+    }
+
+    .faq-answer .inline-link {
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: 600;
+    }
+
+    .faq-answer .inline-link:hover {
+      color: var(--primary-dark);
+      text-decoration-thickness: 2px;
+    }
+
+    .faq-item.open .faq-answer {
+      padding-bottom: 16px;
+    }
+
+    .footer {
+      background: #1f2a3c;
+      color: rgba(255,255,255,0.85);
+      padding: 44px 0;
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer a {
+      color: #c7ddff;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split,
+      .membership-grid,
+      .pricing-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .employer-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .provider-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .provider-photo {
+        max-width: 280px;
+      }
+
+      .membership-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-features {
+        justify-self: center;
+        width: 100%;
+      }
+
+      .price-card.highlight {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(1140px, 100% - 32px);
+      }
+
+      .section {
+        padding: 74px 0;
+      }
+
+      .hero {
+        padding: 62px 0 72px;
+      }
+
+      .hero-features {
+        grid-template-columns: 1fr;
+      }
+
+      .brand {
+        gap: 3px;
+      }
+
+      .brand-logo {
+        width: 82px;
+        height: 82px;
+      }
+
+      .brand-title-aurora {
+        font-size: clamp(1.7rem, 9vw, 2.3rem);
+      }
+
+      .brand-title-row {
+        gap: 12px;
+        margin-top: 2px;
+      }
+
+      .brand-title-row::before,
+      .brand-title-row::after {
+        height: 6px;
+        width: clamp(32px, 10vw, 52px);
+      }
+
+      .brand-title-dpc {
+        font-size: clamp(1.4rem, 8.4vw, 2rem);
+      }
+
+      .brand-title-sub {
+        margin-top: 5px;
+        font-size: clamp(0.5rem, 2.8vw, 0.72rem);
+        letter-spacing: clamp(2px, 0.45vw, 3.4px);
+      }
+
+      .hero-actions {
+        width: 100%;
+      }
+
+      .hero-actions .btn {
+        flex: 1;
+      }
+
+      .employer-block {
+        padding: 20px;
+      }
+
+      .employer-final-cta .btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-inner {
+        align-items: stretch;
+      }
+
+      .nav-top {
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .brand {
+        justify-content: flex-start;
+        width: auto;
+        max-width: calc(100% - 52px);
+      }
+
+      .brand-title-text {
+        width: clamp(160px, 48vw, 230px);
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        flex-shrink: 0;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        width: 100%;
+        background: #ffffff;
+        border: 1px solid #e1e9f9;
+        border-radius: 12px;
+        padding: 8px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        text-align: left;
+        padding: 10px 12px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      html {
+        scroll-padding-top: 170px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="nav-top">
+        <a class="brand" href="#home" aria-label="Aurora Direct Primary Care Home">
+          <img class="brand-logo" src="images/AuroraDPC-Logo.jpg" alt="Aurora Direct Primary Care logo">
+          <span class="brand-title-text" aria-label="Aurora Direct Primary Care">
+            <span class="brand-title-aurora">AURORA</span>
+            <span class="brand-title-row">
+              <span class="brand-title-dpc">DPC</span>
+            </span>
+            <span class="brand-title-sub">DIRECT PRIMARY CARE</span>
+          </span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#membership">Membership</a>
+        <a href="#employer-plans">Employer Plans</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-intro">
+          <h1>Healthcare That Puts You First</h1>
+          <p>
+            Personalized primary care with same-day access, longer appointments, and a direct
+            relationship with your provider without the frustrations of traditional healthcare.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#membership">Become a Member</a>
+            <a class="btn btn-outline" href="#employer-plans">For Employers</a>
+          </div>
+        </div>
+
+        <div class="hero-features">
+          <article class="hero-feature">
+            <h3>❤️ Longer Appointments</h3>
+            <p>Never feel rushed. We take the time to understand your health, answer your questions, and create a personalized care plan.</p>
+          </article>
+          <article class="hero-feature">
+            <h3>📱 Direct Access</h3>
+            <p>Message your provider directly through our secure patient portal for non-urgent questions and ongoing support.</p>
+          </article>
+          <article class="hero-feature">
+            <h3>📅 Same- or Next-Day Visits</h3>
+            <p>When you're sick or need medical advice, timely access matters.</p>
+          </article>
+          <article class="hero-feature">
+            <h3>🌿 Prevention-Focused Care</h3>
+            <p>We emphasize preventive care, lifestyle counseling, and early intervention to help you stay healthy, not just treat illness.</p>
+          </article>
+        </div>
+
+        <hr class="hero-divider">
+
+        <section class="hero-who" aria-label="Who is Aurora DPC for">
+          <h2>Who is Aurora DPC for?</h2>
+          <ul class="hero-who-list">
+            <li>Busy professionals</li>
+            <li>Families</li>
+            <li>Entrepreneurs</li>
+            <li>Self-employed individuals</li>
+            <li>Small businesses</li>
+            <li class="center-item">Anyone looking for a more personal<br>healthcare experience</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container">
+        <h2 class="section-title">Our Mission &amp; Values</h2>
+        <p class="section-subtitle">
+          Built around access, relationships, and better everyday healthcare.
+        </p>
+
+        <div class="split" style="margin-top: 28px;">
+          <article class="panel">
+            <h3>Our Mission</h3>
+            <p>
+              At Aurora DPC, our mission is to provide personalized, relationship-based primary care
+              through a simple membership model. We believe healthcare should be easier to access,
+              less rushed, and more focused on prevention, trust, and long-term health.
+            </p>
+            <p style="margin-top: 12px;">
+              By offering longer visits, timely appointments, direct communication, and transparent
+              pricing, we help individuals, families, and small businesses experience primary care
+              the way it should be: personal, practical, and centered around the patient.
+            </p>
+          </article>
+          <article class="panel">
+            <h3>Our Values</h3>
+            <ul class="about-values">
+              <li><strong>Compassionate Care</strong><br>We listen, explain, and treat every patient with kindness, patience, and respect.</li>
+              <li><strong>Accessibility</strong><br>Primary care should be easy to reach when you need guidance. We offer timely appointments, secure communication, and a more responsive care experience.</li>
+              <li><strong>Clinical Excellence</strong><br>We provide evidence-based medical care, thorough assessments, and thoughtful treatment plans tailored to each patient's needs.</li>
+              <li><strong>Transparency</strong><br>Our membership model is simple, clear, and upfront - with no surprise bills from our office.</li>
+              <li><strong>Prevention &amp; Long-Term Health</strong><br>We focus on keeping patients healthy through preventive care, lifestyle guidance, chronic disease management, and early intervention.</li>
+              <li><strong>Relationship-Based Care</strong><br>We believe better care happens when your provider knows you, your history, your goals, and your life.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="provider-panel">
+          <div class="provider-layout">
+            <img class="provider-photo" src="images/Irina1.jpg" alt="Irina Danilova, Founder and Primary Care Provider at Aurora DPC">
+            <div>
+              <h2 class="section-title">Irina Danilova, MSN, AGPCNP</h2>
+              <p class="provider-role">Founder &amp; Primary Care Provider</p>
+              <p>
+                Irina is a board-certified <strong>Adult Primary Care Nurse Practitioner</strong> dedicated to
+                providing personalized, relationship-based healthcare for adults. She believes exceptional
+                primary care begins with listening, building trust, and giving patients the time they deserve.
+              </p>
+              <p>
+                Rather than rushed appointments and reactive medicine, Irina focuses on prevention, early
+                intervention, and partnering with patients to help them achieve and maintain long-term health.
+                She takes a comprehensive approach to primary care, managing both acute and chronic medical
+                conditions while emphasizing wellness, preventive care, and healthy aging.
+              </p>
+              <p>
+                As a member of <strong>The Menopause Society</strong>, Irina also has a special interest in women's
+                midlife health and remains current with the latest evidence-based recommendations for menopause care.
+              </p>
+              <p>
+                At <strong>Aurora DPC</strong>, Irina offers longer appointments, direct access, and a personalized
+                care experience designed around the patient, not the healthcare system. Her mission is simple:
+                to provide accessible, compassionate primary care that empowers patients to make informed
+                decisions and live healthier lives.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section membership" id="membership">
+      <div class="container">
+        <h2 class="section-title">Membership Options &amp; Savings</h2>
+
+        <div class="membership-cards">
+          <article class="membership-card main bg-1">
+            <h3>Aurora DPC</h3>
+            <div class="membership-price">$99/month <span class="membership-note">(Limited to the first 50 members)</span></div>
+            <p>Your Founding Member rate is locked in for as long as you remain an active member.</p>
+            <h4 style="margin-top:4px;">Standard Membership</h4>
+            <p>Future memberships will be offered at our standard monthly rate of $129/month.</p>
+          </article>
+
+          <article class="membership-card bg-2">
+            <h3>Midlife Health Optimization</h3>
+            <div class="membership-price">+$50/month</div>
+            <p>For DPC members beginning HRT or requiring active menopause management.</p>
+            <ul class="membership-list">
+              <li>Comprehensive menopause evaluation</li>
+              <li>Personalized treatment planning</li>
+              <li>Hormone therapy initiation and adjustments</li>
+              <li>Symptom monitoring and provider follow-up</li>
+            </ul>
+          </article>
+
+          <article class="membership-card bg-3">
+            <h3>Membership Savings</h3>
+            <ul class="membership-list">
+              <li>Founding Member pricing</li>
+              <li>Household membership discounts</li>
+              <li>Employer and small business plans</li>
+              <li>Member referral rewards</li>
+              <li>Courtesy discounts at practice discretion</li>
+            </ul>
+            <p>Discounts cannot be combined.</p>
+          </article>
+
+          <article class="membership-card bg-4">
+            <h3>Offers &amp; Employer Options</h3>
+            <p>Membership options are available for individuals, households, and organizations.</p>
+            <ul class="membership-list">
+              <li>Direct Primary Care plans</li>
+              <li>Annual wellness exams</li>
+              <li>Chronic disease management</li>
+              <li>Occupational health and DOT exams</li>
+            </ul>
+            <p>Please contact our office to learn what options are available for you.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section employer" id="employer-plans">
+      <div class="container">
+        <h2 class="section-title">A Healthcare Benefit Your Employees Will Actually Use</h2>
+        <p class="section-subtitle">Providing quality healthcare doesn't have to mean higher insurance premiums.</p>
+
+        <div class="employer-layout">
+          <article class="employer-block employer-card-1 employer-bg-one">
+            <p>
+              Aurora DPC partners with small and mid-sized businesses to give employees direct access to personalized
+              primary care through an affordable monthly membership. Employees enjoy timely appointments, longer visits,
+              and direct communication with their provider while employers benefit from a healthier, more productive workforce.
+            </p>
+          </article>
+
+          <article class="employer-block employer-card-2 employer-bg-why">
+            <h3>Why Employers Choose Aurora DPC</h3>
+            <p>Instead of generic features... Let's talk about outcomes.</p>
+            <ul class="employer-checklist">
+              <li>Faster access to primary care</li>
+              <li>Reduced time away from work</li>
+              <li>Same- or next-day appointments</li>
+              <li>Better management of chronic conditions</li>
+              <li>Preventive care that keeps employees healthier</li>
+              <li>Direct communication with their healthcare provider</li>
+              <li>A valuable employee benefit that supports recruitment and retention</li>
+            </ul>
+          </article>
+
+          <article class="employer-block employer-card-3 employer-bg-one">
+            <h3>Designed for Small Businesses</h3>
+            <p>
+              Whether you have <strong>5 employees or 100</strong>, Aurora DPC can help you offer personalized primary care
+              without adding another layer of complexity.
+            </p>
+            <p style="margin-top:10px;">Our membership model is simple, transparent, and easy to implement.</p>
+          </article>
+
+          <article class="employer-block employer-card-4 employer-bg-industries">
+            <h3>Industries We Commonly Serve</h3>
+            <ul class="industry-list">
+              <li>Construction</li>
+              <li>Landscaping</li>
+              <li>Trucking &amp; Transportation - we include DOT exams in our membership plan!</li>
+              <li>Small Professional Offices</li>
+              <li>Manufacturing</li>
+              <li>Hospitality</li>
+              <li>Retail</li>
+              <li>Family-Owned Businesses</li>
+            </ul>
+          </article>
+
+          <article class="employer-block employer-card-5 employer-bg-five">
+            <h3>How It Works</h3>
+            <div class="how-steps">
+              <p class="how-step"><strong>1. Meet</strong><br>We'll learn about your business and your employees' healthcare needs.</p>
+              <p class="how-arrow">↓</p>
+              <p class="how-step"><strong>2. Customize</strong><br>We'll recommend a membership option that fits your team.</p>
+              <p class="how-arrow">↓</p>
+              <p class="how-step"><strong>3. Support</strong><br>Your employees receive personalized primary care with direct access to their provider.</p>
+            </div>
+          </article>
+
+          <article class="employer-block employer-card-6">
+            <h3>Schedule an Employer Consultation</h3>
+            <div class="employer-final-cta">
+              <a class="btn btn-primary" href="tel:9413121633" aria-label="Call to schedule an employer consultation">&#128222; Call</a>
+              <a class="btn btn-outline" href="mailto:info@auroraseniorhealth.com?subject=Schedule%20Employer%20Consultation" aria-label="Email to schedule an employer consultation">&#9993; Email</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faqs">
+      <div class="container">
+        <h2 class="section-title">FAQs</h2>
+        <p class="section-subtitle">Answers to common questions about Aurora Direct Primary Care memberships.</p>
+
+        <div class="faq-list">
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>What insurance plans do you accept?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Aurora DPC is a membership-based primary care practice and does not bill health
+                insurance for services provided through the membership, including Medicare,
+                Medicare Advantage, Medicaid, or commercial insurance plans.
+              </p>
+              <p>
+                Although Irina Danilova is a participating Medicare provider, Medicare and other
+                insurance plans are not accepted as payment for Aurora DPC membership services.
+                This allows us to provide longer appointments, direct access, and personalized care
+                without the restrictions of the traditional insurance model.
+              </p>
+              <p>
+                Patients are encouraged to maintain health insurance to cover services outside of
+                Aurora DPC, such as specialist visits, hospitalizations, emergency care, imaging,
+                laboratory services, and prescription medications.
+              </p>
+              <p>
+                If you are a Medicare beneficiary interested in receiving care through your
+                Medicare benefits, please visit our <a class="inline-link" href="https://www.auroraseniorhealth.com" target="_blank" rel="noopener noreferrer">Aurora Adult Primary Care practice</a>, which
+                provides Medicare-covered primary care services.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Do you prescribe Hormone Replacement Therapy (HRT)?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. If you are already stable on your current hormone replacement therapy regimen,
+                we are happy to continue prescribing and monitoring your treatment as part of your
+                ongoing primary care, when medically appropriate.
+              </p>
+              <p>
+                If you are seeking an initial menopause evaluation, experiencing new or worsening
+                symptoms, or would like a comprehensive assessment and personalized hormone therapy
+                plan, we recommend scheduling a consultation through Aurora Menopause &amp; Midlife
+                Health. This specialty program provides an in-depth evaluation, individualized
+                treatment recommendations, and ongoing management tailored to your unique needs.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>What is Direct Primary Care, and what does it mean?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Direct Primary Care or DPC is an innovative alternative payment model where the provider charges the patient an affordable monthly subscription fee. The DPC allows patients to gain unrestricted access to their provider and address health needs that are not typically covered by insurance, such as weight loss medications, bioidentical hormone replacement treatments, functional medicine, etc. The amount of the fee usually depends on the patient's needs, chronic conditions, and age. DPC does not replace insurance plans that may pay for certain laboratory testing and imaging, regular medications, or specialty/emergent care.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Do you assist with weight loss?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Obesity is considered a chronic disease, so we assist and provide medical and pharmacological treatment for obesity.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Can I pay cash for a one-time visit, and what is the price?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Aurora DPC is designed to provide ongoing, relationship-based primary care, not
+                episodic or urgent care services.
+              </p>
+              <p>
+                If you're considering joining our practice, you're welcome to schedule a one-time
+                consultation for $150 to meet your provider, discuss your healthcare needs, and
+                learn how our membership works.
+              </p>
+              <p>
+                Should you enroll in Aurora DPC within 60 days, your consultation fee will be
+                applied toward your comprehensive new member visit.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Do you accept Medicaid?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We do not accept Medicaid.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Do you draw labs?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We draw labs in the office only for an additional fee of $20. In-home, we may refer you to a mobile lab that comes to your house and collects necessary lab specimens if you desire. However, depending on the lab, this service may cost you an additional convenience fee.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Do you prescribe opioids?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We refer our patients to a pain specialist in your area for management of chronic pain.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div style="text-align:center;">
+          <h2 class="section-title">Contact Us</h2>
+          <p class="section-subtitle" style="margin:0 auto;">We'd love to hear from you. Reach out to schedule an appointment or ask any questions.</p>
+        </div>
+        <div class="contact-grid">
+          <div>
+            <div class="contact-info-cards">
+              <a href="tel:9413121633" class="contact-card"> <div class="contact-card-icon">📞</div> <div>
+                  <h4>Phone</h4>
+                  <p>(941) 312-1633</p>
+                </div> </a>
+              <div class="contact-card">
+                <div class="contact-card-icon">📠</div>
+                <div>
+                  <h4>Fax</h4>
+                  <p>(941) 732-1658</p>
+                </div>
+              </div>
+              <a href="mailto:info@auroraseniorhealth.com" class="contact-card"> <div class="contact-card-icon">✉️</div> <div>
+                  <h4>Email</h4>
+                  <p><span style="color:var(--primary);">info@auroraseniorhealth.com</span></p>
+                </div> </a>
+              <a href="https://maps.google.com/?q=405+Interstate+Blvd+Unit+C+Sarasota+FL+34240" target="_blank" class="contact-card"> <div class="contact-card-icon">📍</div> <div>
+                  <h4>Address</h4>
+                  <p>405 Interstate Blvd Unit C, Sarasota, FL 34240</p>
+                </div> </a>
+            </div>
+            <div class="contact-hours" style="margin-top:20px;">
+              <h3>🕐 Hours of Operation</h3>
+              <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:10px;">All visits are by appointment only.</p>
+              <div class="hours-row">
+                <span class="hours-day">Monday - Friday</span>
+                <span class="hours-time">By Appointment</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Saturday</span>
+                <span class="hours-time">Limited Appointments Available</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Sunday</span>
+                <span class="hours-time">Closed</span>
+              </div>
+              <div class="contact-social">
+                <a href="https://www.facebook.com/profile.php?id=61558248610601" target="_blank" class="social-link" aria-label="Facebook"> <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+                  </svg> </a>
+                <a href="https://www.linkedin.com/company/aurora-senior-health/?viewAsMember=true" target="_blank" class="social-link" aria-label="LinkedIn"> <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+                  </svg> </a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.5!2d-82.4555!3d27.3375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c3400a2e1b9e5f%3A0x1234567890abcdef!2s405+Interstate+Blvd+Unit+C%2C+Sarasota%2C+FL+34240!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Aurora Adult Primary Care Location"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <p><strong>Aurora Direct Primary Care</strong> | Personalized care. Transparent membership.</p>
+      <p><a href="#home">Back to top</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const navLinksEl = document.getElementById('navLinks');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = navLinksEl.querySelectorAll('a');
+    const sections = document.querySelectorAll('main section[id]');
+
+    function closeMobileMenu() {
+      navLinksEl.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinksEl.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        closeMobileMenu();
+      }
+    });
+
+    function setActiveLink() {
+      const scrollPaddingTop = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+      const offset = scrollPaddingTop + 1;
+      let currentId = sections[0]?.id || '';
+
+      sections.forEach((section) => {
+        if (window.scrollY >= section.offsetTop - offset) {
+          currentId = section.id;
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
+      });
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();
+
+    function syncFaqHeights() {
+      document.querySelectorAll('.faq-item').forEach((item) => {
+        const answer = item.querySelector('.faq-answer');
+        if (!answer) {
+          return;
+        }
+
+        if (item.classList.contains('open')) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        } else {
+          answer.style.maxHeight = '0px';
+        }
+      });
+    }
+
+    document.querySelectorAll('.faq-question').forEach((button) => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        item.classList.toggle('open');
+        syncFaqHeights();
+      });
+    });
+
+    window.addEventListener('resize', syncFaqHeights);
+    syncFaqHeights();
+  </script>
+</body>
+</html>
