@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Aurora Direct Primary Care - Personalized primary care with transparent monthly membership for individuals, families, and employers.">
   <title>Aurora Direct Primary Care</title>
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="icon" href="images/Tropical%20Palm%20Wave%20Logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/Tropical%20Palm%20Wave%20Logo.png">
   <style>
     :root {
-      --primary: #0057E1;
+      --primary: #003A96;
       --primary-dark: #003A96;
       --primary-light: #E5F0FE;
       --accent: #ED1C24;
@@ -24,8 +23,6 @@
       --radius: 14px;
       --radius-lg: 20px;
       --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-      --brand-title-width: clamp(240px, 30vw, 400px);
-      --brand-lockup-width: calc(112px + 4px + var(--brand-title-width));
     }
 
     * {
@@ -63,7 +60,7 @@
     }
 
     .section {
-      padding: 92px 0;
+      padding: 10px 0 92px;
     }
 
     .section-title {
@@ -142,86 +139,17 @@
 
     .brand {
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: center;
-      gap: 4px;
-      width: min(calc(100% - 64px), var(--brand-lockup-width));
+      width: min(100%, 860px);
       min-width: 0;
-      text-align: left;
-      line-height: 1;
     }
 
     .brand-logo {
-      width: 112px;
-      height: 112px;
+      display: block;
+      width: 100%;
+      max-height: 240px;
       object-fit: contain;
-      object-position: center;
-      border-radius: 0;
-      background: transparent;
-      box-shadow: none;
-      padding: 0;
-      align-self: center;
-    }
-
-    .brand-title-text {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      line-height: 0.95;
-      user-select: none;
-      width: var(--brand-title-width);
-      max-width: 100%;
-      min-width: 0;
-    }
-
-    .brand-title-aurora {
-      width: 100%;
-      text-align: center;
-      font-size: clamp(2.35rem, 5vw, 3.8rem);
-      font-weight: 900;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      color: #b40202;
-    }
-
-    .brand-title-row {
-      margin-top: 4px;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-    }
-
-    .brand-title-row::before,
-    .brand-title-row::after {
-      content: "";
-      height: 8px;
-      width: clamp(58px, 9vw, 108px);
-      border-radius: 999px;
-      background: #1543b7;
-      flex: 0 0 auto;
-    }
-
-    .brand-title-dpc {
-      font-size: clamp(2.1rem, 4.3vw, 3.2rem);
-      font-weight: 900;
-      letter-spacing: 0.3px;
-      text-transform: uppercase;
-      color: #062ea9;
-      line-height: 0.95;
-    }
-
-    .brand-title-sub {
-      margin-top: 8px;
-      font-size: clamp(0.84rem, 1.6vw, 1.15rem);
-      font-weight: 800;
-      letter-spacing: clamp(3.2px, 0.62vw, 6.4px);
-      text-transform: uppercase;
-      color: #b40202;
-      white-space: nowrap;
     }
 
     .nav-links {
@@ -230,7 +158,7 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      width: min(calc(100% - 64px), var(--brand-lockup-width));
+      width: min(100%, 760px);
     }
 
     .menu-toggle {
@@ -284,7 +212,7 @@
 
     .hero {
       position: relative;
-      padding: 88px 0 92px;
+      padding: 10px 0 92px;
       background:
         linear-gradient(
           to bottom,
@@ -544,6 +472,10 @@
       gap: 10px;
     }
 
+    .membership-card.midlife {
+      gap: 6px;
+    }
+
     .membership-card.main {
       grid-column: 1 / -1;
       background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
@@ -601,7 +533,7 @@
     .membership-price {
       font-size: 1.35rem;
       font-weight: 800;
-      color: var(--primary);
+      color: var(--primary-dark);
       margin-bottom: 8px;
     }
 
@@ -828,9 +760,25 @@
 
     .employer-final-cta {
       margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(2, 120px);
+      justify-content: center;
+      align-items: center;
       gap: 10px;
+    }
+
+    .employer-final-cta > .btn,
+    .employer-final-cta > .email-cta-options {
+      width: 120px;
+      height: 52px;
+    }
+
+    .employer-final-cta > .email-cta-options > summary.btn {
+      display: inline-flex;
+      width: 100%;
+      height: 52px;
+      font-size: 0.95rem;
+      font-weight: 600;
     }
 
     .employer-card-6 {
@@ -906,6 +854,77 @@
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--text);
+    }
+
+    .email-card {
+      align-items: flex-start;
+    }
+
+    .email-card-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .email-address {
+      overflow-wrap: anywhere;
+    }
+
+    .email-options {
+      margin-top: 8px;
+    }
+
+    .email-options summary {
+      width: fit-content;
+      color: var(--primary);
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .email-cta-options {
+      margin-top: 0;
+    }
+
+    .email-cta-options summary {
+      list-style: none;
+    }
+
+    .email-cta-options > summary.btn {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .email-cta-options summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .email-option-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      margin-top: 8px;
+    }
+
+    .email-option-list a,
+    .email-option-list button {
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: var(--primary);
+      font: inherit;
+      font-size: 0.82rem;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      cursor: pointer;
+    }
+
+    .email-status {
+      display: block;
+      min-height: 1.2em;
+      margin-top: 4px;
+      color: var(--text-light);
+      font-size: 0.76rem;
     }
 
     .contact-hours {
@@ -1100,11 +1119,11 @@
       }
 
       .section {
-        padding: 74px 0;
+        padding: 10px 0 74px;
       }
 
       .hero {
-        padding: 62px 0 72px;
+        padding: 10px 0 72px;
       }
 
       .hero-features {
@@ -1112,37 +1131,14 @@
       }
 
       .brand {
-        gap: 3px;
+        justify-content: flex-start;
+        flex: 1 1 auto;
+        width: auto;
+        max-width: calc(100% - 52px);
       }
 
       .brand-logo {
-        width: 82px;
-        height: 82px;
-      }
-
-      .brand-title-aurora {
-        font-size: clamp(1.7rem, 9vw, 2.3rem);
-      }
-
-      .brand-title-row {
-        gap: 12px;
-        margin-top: 2px;
-      }
-
-      .brand-title-row::before,
-      .brand-title-row::after {
-        height: 6px;
-        width: clamp(32px, 10vw, 52px);
-      }
-
-      .brand-title-dpc {
-        font-size: clamp(1.4rem, 8.4vw, 2rem);
-      }
-
-      .brand-title-sub {
-        margin-top: 5px;
-        font-size: clamp(0.5rem, 2.8vw, 0.72rem);
-        letter-spacing: clamp(2px, 0.45vw, 3.4px);
+        max-height: none;
       }
 
       .hero-actions {
@@ -1160,11 +1156,21 @@
       .employer-final-cta .btn {
         width: 100%;
       }
+
+      .employer-final-cta {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .employer-final-cta > .btn,
+      .employer-final-cta > .email-cta-options {
+        width: 100%;
+      }
     }
 
     @media (max-width: 1200px) {
       .nav-inner {
         align-items: stretch;
+        padding: 8px 0;
       }
 
       .nav-top {
@@ -1176,35 +1182,6 @@
         justify-content: flex-start;
         width: auto;
         max-width: calc(100% - 52px);
-      }
-
-      .brand-title-text {
-        width: clamp(160px, 48vw, 230px);
-      }
-
-      .brand-title-aurora {
-        font-size: clamp(1.62rem, 3.2vw, 2.2rem);
-      }
-
-      .brand-title-row {
-        gap: 10px;
-        margin-top: 2px;
-      }
-
-      .brand-title-row::before,
-      .brand-title-row::after {
-        height: 5px;
-        width: clamp(34px, 8vw, 58px);
-      }
-
-      .brand-title-dpc {
-        font-size: clamp(1.34rem, 2.8vw, 1.95rem);
-      }
-
-      .brand-title-sub {
-        margin-top: 5px;
-        font-size: clamp(0.58rem, 1.12vw, 0.82rem);
-        letter-spacing: clamp(2px, 0.36vw, 3.2px);
       }
 
       .menu-toggle {
@@ -1237,18 +1214,38 @@
 
     @media (min-width: 1201px) {
       html {
-        scroll-padding-top: 170px;
+        scroll-padding-top: 200px;
       }
 
       .nav-inner {
-        gap: 10px;
-        padding: 12px 0 10px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 10px 0;
+      }
+
+      .nav-top {
+        flex: 0 1 420px;
+        width: auto;
+        min-width: 0;
+      }
+
+      .brand {
+        width: min(100%, 420px);
+      }
+
+      .brand-logo {
+        max-height: 160px;
       }
 
       .nav-links {
         flex-wrap: nowrap;
+        flex: 1 1 auto;
         gap: 2px;
-        width: min(100%, 760px);
+        justify-content: flex-end;
+        width: auto;
+        max-width: 760px;
       }
 
       .nav-links a {
@@ -1257,22 +1254,6 @@
         white-space: nowrap;
       }
 
-      .brand-title-row::before,
-      .brand-title-row::after {
-        height: 4px;
-      }
-
-      .brand-title-aurora {
-        font-size: clamp(1.618rem, 3.4425vw, 2.6163rem);
-      }
-
-      .brand-title-dpc {
-        font-size: clamp(1.4459rem, 2.9606vw, 2.2032rem);
-      }
-
-      .brand-title-sub {
-        font-size: clamp(0.714rem, 1.36vw, 0.978rem);
-      }
     }
   </style>
 </head>
@@ -1280,15 +1261,8 @@
   <header class="nav">
     <div class="container nav-inner">
       <div class="nav-top">
-        <a class="brand" href="#home" aria-label="Aurora Direct Primary Care Home">
-          <img class="brand-logo" src="images/AuroraDPC-Logo.jpg" alt="Aurora Direct Primary Care logo">
-          <span class="brand-title-text" aria-label="Aurora Direct Primary Care">
-            <span class="brand-title-aurora">AURORA</span>
-            <span class="brand-title-row">
-              <span class="brand-title-dpc">DPC</span>
-            </span>
-            <span class="brand-title-sub">DIRECT PRIMARY CARE</span>
-          </span>
+        <a class="brand" href="#home" aria-label="Sarasota Direct Primary Care Home">
+          <img class="brand-logo" src="images/Sarasota%20Coastal%20Primary%20Care%20Branding.png" alt="Sarasota Coastal Primary Care">
         </a>
         <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">
           <span></span>
@@ -1340,12 +1314,20 @@
             <h3>🌿 Prevention-Focused Care</h3>
             <p>We emphasize preventive care, lifestyle counseling, and early intervention to help you stay healthy, not just treat illness.</p>
           </article>
+          <article class="hero-feature">
+            <h3>🌸 Personalized Hormone Optimization</h3>
+            <p>Address hormonal changes affecting your energy, sleep, mood, and overall well-being. When clinically appropriate, we offer individualized hormone therapy to help you feel your best.</p>
+          </article>
+          <article class="hero-feature">
+            <h3>⚖️ Medical Weight Management</h3>
+            <p>Achieve sustainable weight loss with personalized nutrition, lifestyle guidance, and prescription weight loss medications when appropriate, including GLP-1 therapies.</p>
+          </article>
         </div>
 
         <hr class="hero-divider">
 
-        <section class="hero-who" aria-label="Who is Aurora DPC for">
-          <h2>Who is Aurora DPC for?</h2>
+        <section class="hero-who" aria-label="Who is Sarasota DPC for">
+          <h2>Who is Sarasota DPC for?</h2>
           <ul class="hero-who-list">
             <li>Busy professionals</li>
             <li>Families</li>
@@ -1369,7 +1351,7 @@
           <article class="panel">
             <h3>Our Mission</h3>
             <p>
-              At Aurora DPC, our mission is to provide personalized, relationship-based primary care
+              At Sarasota DPC, our mission is to provide personalized, relationship-based primary care
               through a simple membership model. We believe healthcare should be easier to access,
               less rushed, and more focused on prevention, trust, and long-term health.
             </p>
@@ -1394,7 +1376,7 @@
 
         <article class="provider-panel">
           <div class="provider-layout">
-            <img class="provider-photo" src="images/Irina1.jpg" alt="Irina Danilova, Founder and Primary Care Provider at Aurora DPC">
+            <img class="provider-photo" src="images/Irina1.jpg" alt="Irina Danilova, Founder and Primary Care Provider at Sarasota DPC">
             <div>
               <h2 class="section-title">Irina Danilova, MSN, AGPCNP</h2>
               <p class="provider-role">Founder &amp; Primary Care Provider</p>
@@ -1414,7 +1396,7 @@
                 midlife health and remains current with the latest evidence-based recommendations for menopause care.
               </p>
               <p>
-                At <strong>Aurora DPC</strong>, Irina offers longer appointments, direct access, and a personalized
+                At <strong>Sarasota DPC</strong>, Irina offers longer appointments, direct access, and a personalized
                 care experience designed around the patient, not the healthcare system. Her mission is simple:
                 to provide accessible, compassionate primary care that empowers patients to make informed
                 decisions and live healthier lives.
@@ -1431,21 +1413,21 @@
 
         <div class="membership-cards">
           <article class="membership-card main bg-1">
-            <h3>Aurora DPC</h3>
+            <h3>Sarasota DPC</h3>
             <div class="membership-price">$99/month <span class="membership-note">(Limited to the first 50 members)</span></div>
             <p>Your Founding Member rate is locked in for as long as you remain an active member.</p>
             <h4 style="margin-top:4px;">Standard Membership</h4>
             <p>Future memberships will be offered at our standard monthly rate of $129/month.</p>
           </article>
 
-          <article class="membership-card bg-2">
+          <article class="membership-card bg-2 midlife">
             <h3>Midlife Health Optimization</h3>
-            <div class="membership-price">+$50/month</div>
             <p>For DPC members beginning HRT or requiring active menopause management.</p>
             <ul class="membership-list">
               <li>Comprehensive menopause evaluation</li>
               <li>Personalized treatment planning</li>
-              <li>Hormone therapy initiation and adjustments</li>
+              <li>Hormone initiation if indicated</li>
+              <li>Weight management if indicated and desired</li>
               <li>Symptom monitoring and provider follow-up</li>
             </ul>
           </article>
@@ -1485,14 +1467,14 @@
         <div class="employer-layout">
           <article class="employer-block employer-card-1 employer-bg-one">
             <p>
-              Aurora DPC partners with small and mid-sized businesses to give employees direct access to personalized
+              Sarasota DPC partners with small and mid-sized businesses to give employees direct access to personalized
               primary care through an affordable monthly membership. Employees enjoy timely appointments, longer visits,
               and direct communication with their provider while employers benefit from a healthier, more productive workforce.
             </p>
           </article>
 
           <article class="employer-block employer-card-2 employer-bg-why">
-            <h3>Why Employers Choose Aurora DPC</h3>
+            <h3>Why Employers Choose Sarasota DPC</h3>
             <p>Instead of generic features... Let's talk about outcomes.</p>
             <ul class="employer-checklist">
               <li>Faster access to primary care</li>
@@ -1508,7 +1490,7 @@
           <article class="employer-block employer-card-3 employer-bg-one">
             <h3>Designed for Small Businesses</h3>
             <p>
-              Whether you have <strong>5 employees or 100</strong>, Aurora DPC can help you offer personalized primary care
+              Whether you have <strong>5 employees or 100</strong>, Sarasota DPC can help you offer personalized primary care
               without adding another layer of complexity.
             </p>
             <p style="margin-top:10px;">Our membership model is simple, transparent, and easy to implement.</p>
@@ -1543,7 +1525,16 @@
             <h3>Schedule an Employer Consultation</h3>
             <div class="employer-final-cta">
               <a class="btn btn-primary" href="tel:9413121633" aria-label="Call to schedule an employer consultation">&#128222; Call</a>
-              <a class="btn btn-outline" href="mailto:info@auroraseniorhealth.com?subject=Schedule%20Employer%20Consultation" aria-label="Email to schedule an employer consultation">&#9993; Email</a>
+              <details class="email-options email-cta-options">
+                <summary class="btn btn-outline" aria-label="Choose how to email about an employer consultation">&#9993; Email</summary>
+                <ul class="email-option-list">
+                  <li><a href="mailto:info@auroraseniorhealth.com?subject=Schedule%20Employer%20Consultation">Default mail app</a></li>
+                  <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info%40auroraseniorhealth.com&amp;su=Schedule%20Employer%20Consultation" target="_blank" rel="noopener noreferrer">Gmail</a></li>
+                  <li><a href="https://outlook.office.com/mail/deeplink/compose?to=info%40auroraseniorhealth.com&amp;subject=Schedule%20Employer%20Consultation" target="_blank" rel="noopener noreferrer">Outlook web</a></li>
+                  <li><button type="button" data-copy-email="info@auroraseniorhealth.com">Copy address</button></li>
+                </ul>
+                <span class="email-status" aria-live="polite"></span>
+              </details>
             </div>
           </article>
         </div>
@@ -1563,19 +1554,19 @@
             </button>
             <div class="faq-answer">
               <p>
-                Aurora DPC is a membership-based primary care practice and does not bill health
+                Sarasota DPC is a membership-based primary care practice and does not bill health
                 insurance for services provided through the membership, including Medicare,
                 Medicare Advantage, Medicaid, or commercial insurance plans.
               </p>
               <p>
                 Although Irina Danilova is a participating Medicare provider, Medicare and other
-                insurance plans are not accepted as payment for Aurora DPC membership services.
+                insurance plans are not accepted as payment for Sarasota DPC membership services.
                 This allows us to provide longer appointments, direct access, and personalized care
                 without the restrictions of the traditional insurance model.
               </p>
               <p>
                 Patients are encouraged to maintain health insurance to cover services outside of
-                Aurora DPC, such as specialist visits, hospitalizations, emergency care, imaging,
+                Sarasota DPC, such as specialist visits, hospitalizations, emergency care, imaging,
                 laboratory services, and prescription medications.
               </p>
               <p>
@@ -1600,9 +1591,9 @@
               <p>
                 If you are seeking an initial menopause evaluation, experiencing new or worsening
                 symptoms, or would like a comprehensive assessment and personalized hormone therapy
-                plan, we recommend scheduling a consultation through Aurora Menopause &amp; Midlife
-                Health. This specialty program provides an in-depth evaluation, individualized
-                treatment recommendations, and ongoing management tailored to your unique needs.
+                plan, we recommend scheduling a consultation to receive an in-depth evaluation,
+                individualized treatment recommendations, and ongoing management tailored to your
+                unique needs.
               </p>
             </div>
           </article>
@@ -1634,7 +1625,7 @@
             </button>
             <div class="faq-answer">
               <p>
-                Aurora DPC is designed to provide ongoing, relationship-based primary care, not
+                Sarasota DPC is designed to provide ongoing, relationship-based primary care, not
                 episodic or urgent care services.
               </p>
               <p>
@@ -1643,7 +1634,7 @@
                 learn how our membership works.
               </p>
               <p>
-                Should you enroll in Aurora DPC within 60 days, your consultation fee will be
+                Should you enroll in Sarasota DPC within 60 days, your consultation fee will be
                 applied toward your comprehensive new member visit.
               </p>
             </div>
@@ -1661,11 +1652,12 @@
 
           <article class="faq-item">
             <button class="faq-question" type="button">
-              <span>Do you draw labs?</span>
+              <span>Laboratory Testing</span>
               <span>+</span>
             </button>
             <div class="faq-answer">
-              <p>We draw labs in the office only for an additional fee of $20. In-home, we may refer you to a mobile lab that comes to your house and collects necessary lab specimens if you desire. However, depending on the lab, this service may cost you an additional convenience fee.</p>
+              <p>For your convenience, routine laboratory testing is performed through established, accredited laboratories such as Quest Diagnostics and Labcorp. We provide the necessary lab orders, and you may visit a participating location for specimen collection.</p>
+              <p>Patients may choose to use their health insurance or take advantage of discounted self-pay rates. For self-pay testing, the laboratory charges the applicable test fees plus a one-time $10 specimen collection fee. When using insurance, the laboratory bills your insurance provider directly, and any applicable copayments, coinsurance, or deductibles are the patient's responsibility.</p>
             </div>
           </article>
 
@@ -1702,10 +1694,23 @@
                   <p>(941) 732-1658</p>
                 </div>
               </div>
-              <a href="mailto:info@auroraseniorhealth.com" class="contact-card"> <div class="contact-card-icon">✉️</div> <div>
+              <div class="contact-card email-card">
+                <div class="contact-card-icon">✉️</div>
+                <div class="email-card-content">
                   <h4>Email</h4>
-                  <p><span style="color:var(--primary);">info@auroraseniorhealth.com</span></p>
-                </div> </a>
+                  <p class="email-address">info@auroraseniorhealth.com</p>
+                  <details class="email-options">
+                    <summary>Choose email method</summary>
+                    <ul class="email-option-list">
+                      <li><a href="mailto:info@auroraseniorhealth.com">Default mail app</a></li>
+                      <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info%40auroraseniorhealth.com" target="_blank" rel="noopener noreferrer">Gmail</a></li>
+                      <li><a href="https://outlook.office.com/mail/deeplink/compose?to=info%40auroraseniorhealth.com" target="_blank" rel="noopener noreferrer">Outlook web</a></li>
+                      <li><button type="button" data-copy-email="info@auroraseniorhealth.com">Copy address</button></li>
+                    </ul>
+                    <span class="email-status" aria-live="polite"></span>
+                  </details>
+                </div>
+              </div>
               <a href="https://maps.google.com/?q=405+Interstate+Blvd+Unit+C+Sarasota+FL+34240" target="_blank" class="contact-card"> <div class="contact-card-icon">📍</div> <div>
                   <h4>Address</h4>
                   <p>405 Interstate Blvd Unit C, Sarasota, FL 34240</p>
@@ -1747,6 +1752,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <p><strong>Aurora Direct Primary Care</strong> | Personalized care. Transparent membership.</p>
+      <p>Sarasota Direct Primary Care is a business line of Aurora Clinic, LLC.</p>
       <p><a href="#home">Back to top</a></p>
     </div>
   </footer>
@@ -1754,17 +1760,25 @@
   <script>
     const navLinksEl = document.getElementById('navLinks');
     const menuToggle = document.getElementById('menuToggle');
+    const navEl = document.querySelector('.nav');
     const navLinks = navLinksEl.querySelectorAll('a');
     const sections = document.querySelectorAll('main section[id]');
+
+    function updateScrollPaddingTop() {
+      const navHeight = Math.ceil(navEl.getBoundingClientRect().height);
+      document.documentElement.style.scrollPaddingTop = `${navHeight}px`;
+    }
 
     function closeMobileMenu() {
       navLinksEl.classList.remove('open');
       menuToggle.setAttribute('aria-expanded', 'false');
+      updateScrollPaddingTop();
     }
 
     menuToggle.addEventListener('click', () => {
       const isOpen = navLinksEl.classList.toggle('open');
       menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      updateScrollPaddingTop();
     });
 
     navLinks.forEach((link) => {
@@ -1774,8 +1788,13 @@
     window.addEventListener('resize', () => {
       if (window.innerWidth > 1200) {
         closeMobileMenu();
+      } else {
+        updateScrollPaddingTop();
       }
     });
+
+    window.addEventListener('load', updateScrollPaddingTop);
+    updateScrollPaddingTop();
 
     function setActiveLink() {
       const scrollPaddingTop = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
@@ -1821,6 +1840,23 @@
 
     window.addEventListener('resize', syncFaqHeights);
     syncFaqHeights();
+
+    document.querySelectorAll('[data-copy-email]').forEach((copyEmailButton) => {
+      const emailStatus = copyEmailButton.closest('.email-options').querySelector('.email-status');
+
+      copyEmailButton.addEventListener('click', async () => {
+        try {
+          if (!navigator.clipboard?.writeText) {
+            throw new Error('Clipboard access is unavailable');
+          }
+
+          await navigator.clipboard.writeText(copyEmailButton.dataset.copyEmail);
+          emailStatus.textContent = 'Email address copied.';
+        } catch {
+          emailStatus.textContent = 'Copy unavailable. Select the address above.';
+        }
+      });
+    });
   </script>
 </body>
 </html>
