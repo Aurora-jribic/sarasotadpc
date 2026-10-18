@@ -482,6 +482,23 @@
       border: 1px solid #d6e6ff;
     }
 
+    .membership-card-heading {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .membership-card-heading h3 {
+      margin-bottom: 0;
+    }
+
+    .membership-schedule-btn {
+      flex: 0 0 auto;
+      padding: 10px 18px;
+      white-space: nowrap;
+    }
+
     .membership-card.bg-1,
     .membership-card.bg-2,
     .membership-card.bg-3,
@@ -1063,19 +1080,62 @@
     .footer {
       background: #1f2a3c;
       color: rgba(255,255,255,0.85);
-      padding: 44px 0;
+      padding: 50px 0 24px;
+      text-align: center;
     }
 
     .footer-grid {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
+      display: block;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      font-size: 0.8rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.85rem;
+      max-width: 600px;
+      margin: 0 auto 8px;
+      line-height: 1.7;
+    }
+
+    .footer-bottom p:last-child {
+      margin-bottom: 0;
     }
 
     .footer a {
       color: #c7ddff;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 30px;
+      bottom: 30px;
+      width: 48px;
+      height: 48px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 100;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
     }
 
     @media (max-width: 980px) {
@@ -1147,6 +1207,14 @@
 
       .hero-actions .btn {
         flex: 1;
+      }
+
+      .membership-card-heading {
+        flex-direction: column;
+      }
+
+      .membership-schedule-btn {
+        align-self: flex-end;
       }
 
       .employer-block {
@@ -1293,6 +1361,7 @@
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#membership">Become a Member</a>
+            <a class="btn btn-primary" href="https://app.elationemr.com/book/1132160670629892?appointment_types=1134389504835689">Schedule your visit</a>
             <a class="btn btn-outline" href="#employer-plans">For Employers</a>
           </div>
         </div>
@@ -1413,11 +1482,17 @@
 
         <div class="membership-cards">
           <article class="membership-card main bg-1">
-            <h3>Sarasota DPC</h3>
-            <div class="membership-price">$99/month <span class="membership-note">(Limited to the first 50 members)</span></div>
-            <p>Your Founding Member rate is locked in for as long as you remain an active member.</p>
-            <h4 style="margin-top:4px;">Standard Membership</h4>
-            <p>Future memberships will be offered at our standard monthly rate of $129/month.</p>
+            <div class="membership-card-heading">
+              <h3>One Membership. Personalized Care. Simple Pricing.</h3>
+              <a class="btn btn-primary membership-schedule-btn" href="https://app.elationemr.com/book/1132160670629892?appointment_types=1134389504835689">Schedule your visit</a>
+            </div>
+            <div class="membership-price">Founding Member Rate: $99/month</div>
+            <p class="membership-note">Available to our first 50 members.</p>
+            <div class="membership-price">Standard Membership: $129/month</div>
+            <p class="membership-note">Applies after our founding membership enrollment is complete.</p>
+            <div class="membership-price">Initial Comprehensive Consultation: $150</div>
+            <p>We also appreciate the families and friends who place their trust in our care. Special household membership arrangements and referral appreciation benefits may be available. Please ask us for details.</p>
+            <p class="membership-note">Membership is not health insurance. Additional services, medications, imaging, and outside specialist care may involve separate charges.</p>
           </article>
 
           <article class="membership-card bg-2 midlife">
@@ -1528,10 +1603,10 @@
               <details class="email-options email-cta-options">
                 <summary class="btn btn-outline" aria-label="Choose how to email about an employer consultation">&#9993; Email</summary>
                 <ul class="email-option-list">
-                  <li><a href="mailto:info@auroraseniorhealth.com?subject=Schedule%20Employer%20Consultation">Default mail app</a></li>
-                  <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info%40auroraseniorhealth.com&amp;su=Schedule%20Employer%20Consultation" target="_blank" rel="noopener noreferrer">Gmail</a></li>
-                  <li><a href="https://outlook.office.com/mail/deeplink/compose?to=info%40auroraseniorhealth.com&amp;subject=Schedule%20Employer%20Consultation" target="_blank" rel="noopener noreferrer">Outlook web</a></li>
-                  <li><button type="button" data-copy-email="info@auroraseniorhealth.com">Copy address</button></li>
+                  <li><a href="mailto:DPC@myauroraclinic.com?subject=Schedule%20Employer%20Consultation">Default mail app</a></li>
+                  <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=DPC%40myauroraclinic.com&amp;su=Schedule%20Employer%20Consultation" target="_blank" rel="noopener noreferrer">Gmail</a></li>
+                  <li><a href="https://outlook.office.com/mail/deeplink/compose?to=DPC%40myauroraclinic.com&amp;subject=Schedule%20Employer%20Consultation" target="_blank" rel="noopener noreferrer">Outlook web</a></li>
+                  <li><button type="button" data-copy-email="DPC@myauroraclinic.com">Copy address</button></li>
                 </ul>
                 <span class="email-status" aria-live="polite"></span>
               </details>
@@ -1698,14 +1773,14 @@
                 <div class="contact-card-icon">✉️</div>
                 <div class="email-card-content">
                   <h4>Email</h4>
-                  <p class="email-address">info@auroraseniorhealth.com</p>
+                  <p class="email-address">DPC@myauroraclinic.com</p>
                   <details class="email-options">
                     <summary>Choose email method</summary>
                     <ul class="email-option-list">
-                      <li><a href="mailto:info@auroraseniorhealth.com">Default mail app</a></li>
-                      <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info%40auroraseniorhealth.com" target="_blank" rel="noopener noreferrer">Gmail</a></li>
-                      <li><a href="https://outlook.office.com/mail/deeplink/compose?to=info%40auroraseniorhealth.com" target="_blank" rel="noopener noreferrer">Outlook web</a></li>
-                      <li><button type="button" data-copy-email="info@auroraseniorhealth.com">Copy address</button></li>
+                      <li><a href="mailto:DPC@myauroraclinic.com">Default mail app</a></li>
+                      <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=DPC%40myauroraclinic.com" target="_blank" rel="noopener noreferrer">Gmail</a></li>
+                      <li><a href="https://outlook.office.com/mail/deeplink/compose?to=DPC%40myauroraclinic.com" target="_blank" rel="noopener noreferrer">Outlook web</a></li>
+                      <li><button type="button" data-copy-email="DPC@myauroraclinic.com">Copy address</button></li>
                     </ul>
                     <span class="email-status" aria-live="polite"></span>
                   </details>
@@ -1750,12 +1825,15 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-grid">
-      <p><strong>Aurora Direct Primary Care</strong> | Personalized care. Transparent membership.</p>
-      <p>Sarasota Direct Primary Care is a business line of Aurora Clinic, LLC.</p>
-      <p><a href="#home">Back to top</a></p>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 . All rights reserved.</p>
+        <p>Sarasota Direct Primary Care is a business line of Aurora Clinic, LLC.</p>
+      </div>
     </div>
   </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
 
   <script>
     const navLinksEl = document.getElementById('navLinks');
@@ -1814,6 +1892,14 @@
 
     window.addEventListener('scroll', setActiveLink);
     setActiveLink();
+
+    const backToTopButton = document.getElementById('backToTop');
+    function updateBackToTopVisibility() {
+      backToTopButton.classList.toggle('visible', window.scrollY > 500);
+    }
+    window.addEventListener('scroll', updateBackToTopVisibility);
+    backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    updateBackToTopVisibility();
 
     function syncFaqHeights() {
       document.querySelectorAll('.faq-item').forEach((item) => {
